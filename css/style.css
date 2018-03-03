@@ -1,0 +1,51 @@
+.calendar {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    cursor: default;
+    width: 900px; /* Tamaño de la tabla */
+    margin: auto;
+}
+
+.calendar td {
+    border: 1px solid rgb(185, 185, 185);
+    border-collapse: collapse;
+    text-align: left;
+    vertical-align: top;
+    width: 14.2857%;
+    min-height: 90px;
+    height: 90px;
+}
+
+.calendar td:hover {
+    background-color: rgb(231, 231, 231);
+    cursor: pointer;
+}
+
+.calendar th {
+    text-align: center;
+    border-collapse: collapse;
+}
+
+.calendar table {
+    border-collapse: collapse;
+    background-color: rgb(241, 241, 241);
+    width: 100%;
+}
+
+.calendar tr.month {
+    background-color: rgb(98, 149, 190);
+    border-collapse: collapse;
+    border: 1px solid rgb(185, 185, 185);
+    border-bottom: none;
+    font-size: 40px;
+    border-bottom: none;
+}
+
+.calendar tr.day {
+    background-color: rgb(113, 160, 199);
+    font-size: 20px;
+    border-collapse: collapse;
+    border: 1px solid rgb(185, 185, 185);
+    border-top: none;
+}
+
