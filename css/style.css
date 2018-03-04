@@ -21,6 +21,7 @@ body {
 .navegation {
     width: 5%; /* Tamaño de cada botón de navegación */
     float: left;
+    margin-right: 10px;
 }
 
 .navegation i {
@@ -46,9 +47,9 @@ body {
     border-collapse: collapse;
     text-align: left;
     vertical-align: top;
+    font-size: 1vw;
     width: 14.2857%;
-    min-height: 60px;
-    height: 106px;
+    height: 7.8vw;
 }
 
 .calendar td:hover {
@@ -73,13 +74,13 @@ body {
     border-collapse: collapse;
     border: 1px solid rgb(185, 185, 185);
     border-bottom: none;
-    font-size: 40px;
+    font-size: 3vw;
     border-bottom: none;
 }
 
 .calendar tr.day {
     background-color: rgb(113, 160, 199);
-    font-size: 20px;
+    font-size: 1.5vw;
     border-collapse: collapse;
     border: 1px solid rgb(185, 185, 185);
     border-top: none;
@@ -98,11 +99,11 @@ body {
     text-align: center;
 }
 
-.sidebar div.element {
+.sidebar div.element div {
     padding: 1vw 0 1vw 0;
 }
 
-.sidebar div.element:hover {
+.sidebar div.element div:hover {
     background-color: rgb(242, 242, 242);
     width: 100%;
     cursor: pointer;
@@ -126,13 +127,7 @@ body {
     margin: 0;
 }
 /*---------------------------------------------------------------*/
-@media (min-width: 1920px) {
-    .calendar td {
-        height: 160px;
-    }
-}
-
-@media (max-width: 1024px) {
+@media (max-width: 1000px) {
     .sidebar {
         display: none;
     }
@@ -140,6 +135,36 @@ body {
     .content {
         margin: 0;
         width: 100%;
+        min-width: 800px;
+    }
+
+    .navegation i {
+        font-size: 50px;
+    }
+
+    .calendar td {
+        height: 97px; 
+        font-size: 1em;
+    }
+
+    .calendar tr.month {
+        font-size: 40px;
+    }
+
+    .calendar tr.day {
+        font-size: 20px;
+    }
+}
+
+@media (max-height: 550px) {
+    .sidebar {
+        display: none;
+    }
+
+    .content {
+        margin: 0;
+        width: 100%;
+        min-width: 800px;
     }
 }
 /*---------------------------------------------------------------*/
