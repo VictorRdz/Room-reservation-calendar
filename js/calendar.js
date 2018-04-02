@@ -1,15 +1,22 @@
-var year = 0;    //modificar a obtener los datos (php)
-var month = 0;
-var week = 0;
+var year;
+var month;
+var week;
+
 
 $(document).ready(function() {
 
-    $.get("../php/date.php", function() {
-        year = $year;
-        month = $month;
-        week = $week;
+    // Obtener la fecha del servidor.
+    $.ajax({
+        url: "../php/date.php",
+        type: "GET",
+        success: function(data) {
+            var fecha = JSON.parse(data);
+            year = parseInt(fecha.var1);
+            month = parseInt(fecha.var2) - 1;
+            week = parseInt(fecha.var3);
+            updateCalendar(year, month);
+        }
     });
-    updateCalendar(year, month);
 
 });
 
@@ -54,23 +61,24 @@ function displayContent(firstDayWeek, lastDay) {
 
 // Actualiza el calendario.
 function updateCalendar(year, month) {
-    for(var i = 0; i <= 5; i++) {
-        for(var j = 0; j <= 6; j++) {
-            var id = "#" + i + "-" + j;
-            $(id).text("").css({
-                "backgroundColor" : "rgb(236, 236, 236)",
-                "cursor" : "default"
-            });
+    $("#calendar").animate( { "opacity" : .5 }, 80, function() {
+        for(var i = 0; i <= 5; i++) {
+            for(var j = 0; j <= 6; j++) {
+                var id = "#" + i + "-" + j;
+                $(id).text("").css({
+                    "backgroundColor" : "rgb(236, 236, 236)",
+                    "cursor" : "default"
+                });
+            }
+            j = 0;
         }
-        j = 0;
-    }
-    var date = new Date(year, month);
-    var lastDate = new Date(date.getFullYear(), date.getMonth() + 1, 0);
-    firstDayWeek = date.getUTCDay("1");
-    lastDay = lastDate.getDate();
-    $("#calendar").animate( { "opacity" : .4 }, 80, function() {
+        var date = new Date(year, month);
+        var lastDate = new Date(date.getFullYear(), date.getMonth() + 1, 0);
+        firstDayWeek = date.getUTCDay("1");
+        lastDay = lastDate.getDate();
+
         displayHeader(year, month);
         displayContent(firstDayWeek, lastDay);
+        $("#calendar").animate( { "opacity" : 1 }, 200);
     });
-    $("#calendar").animate( { "opacity" : 1 }, 80);
 }

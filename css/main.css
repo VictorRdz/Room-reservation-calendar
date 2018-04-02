@@ -13,6 +13,7 @@ body {
     display: flex;
     align-items: center;
     margin-left: 15vw;
+    height: 100vh;
 }
 
 /* CALENDARIO -----------------------------------------*/
@@ -71,7 +72,7 @@ body {
     background-color: rgb(236, 236, 236) !important;
 }
 
-/* Sexta fila */
+/* SEXTA FILA */
 #calendar .dayBox .hiddenRow {
     display: none;
 }
