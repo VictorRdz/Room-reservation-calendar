@@ -2,25 +2,6 @@ var year;
 var month;
 var week;
 
-
-$(document).ready(function() {
-
-    // Obtener la fecha del servidor.
-    $.ajax({
-        url: "../php/date.php",
-        type: "GET",
-        success: function(data) {
-            var fecha = JSON.parse(data);
-            year = parseInt(fecha.var1);
-            month = parseInt(fecha.var2) - 1;
-            week = parseInt(fecha.var3);
-            updateCalendar(year, month);
-        }
-    });
-
-});
-
-
 /*  Muestra el mes y el año en el encabezado.
     Ej.-> "Marzo 2018"  , "Junio 2020". */
 function displayHeader(year, month) {
