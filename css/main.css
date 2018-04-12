@@ -21,7 +21,11 @@ body {
 #calendar {
     margin: auto;
     width: 65vw;
+    height: 98vh;
+    min-height: 45vw;
+    max-height: 50vw;
     box-shadow: 2px 2px 10px rgb(151, 151, 151); 
+    color: rgb(255, 255, 255);
 }
 
 #calendar table {
@@ -34,12 +38,11 @@ body {
 /* TABLA MES ----------*/
 #calendar table.month {
     border-bottom: none;
-    color: rgb(240, 240, 240);
+    height: 7%;
 }
 
 #calendar .month th {
     background-color: rgb(80, 95, 141);
-    height: 3vw;
     font-size: 2.5vw;
 }
 
@@ -47,35 +50,48 @@ body {
 #calendar table.day {
     border-top: none;
     border-bottom: none;
-    color: rgb(240, 240, 240);
+    height: 5%;
 }
 
 #calendar .day th {
     background-color: rgb(91, 107, 153);
-    height: 2vw;
     font-size: 1.3vw;
     width: 14.2857%;
 }
 
 /* TABLA DE CONTENIDO */
 #calendar .dayBox {
-    height: 42vw;
+    height: 88%;
+    color: rgb(0, 0, 0);
 }
 
 #calendar .dayBox td {
-    background-color: rgb(236, 236, 236);
     border: 1px solid rgb(187, 187, 187);
     vertical-align: top;
     font-size: 1vw;
 }
 
-#calendar .dayBox td:hover {
-    background-color: rgb(236, 236, 236) !important;
-}
-
 /* SEXTA FILA */
 #calendar .dayBox .hiddenRow {
     display: none;
+}
+
+.normal {
+    background-color: rgb(255, 255, 255) !important;
+    cursor: pointer;
+}
+
+.normal:hover {
+    background-color: rgb(245, 245, 245) !important;
+}
+
+.disponible {
+    background-color : rgb(231, 255, 245) !important;
+    cursor: pointer;
+}
+
+.disponible:hover {
+    background-color : rgb(246, 255, 251) !important;
 }
 
 /* ICONOS DE NAVEGACIÓN */
@@ -125,8 +141,8 @@ body {
 }
 
 #sidebar .menu div {
-    width: 100%;
-    padding: 0.5vw 1vw;
+    width: 90%;
+    padding: 0.5vw 5%;
     cursor: pointer;
     display: flex;
     align-items: center;
@@ -227,8 +243,12 @@ body {
 #list {
     margin: auto;
     width: 70vw;
+    height: 98vh;
+    min-height: 40vw;
+    max-height: 60vw;
     box-shadow: 2px 2px 10px rgb(151, 151, 151); 
     font-size: 1vw;
+    color: rgb(255, 255, 255);
 }
 
 #list .list-table {
@@ -236,28 +256,26 @@ body {
     border-collapse: collapse;
     width: 100%; /* Tamaño horizontal */
     cursor: default;
-    height: 80vh;
+    height: 85%;
     border: 1px solid rgb(187, 187, 187);
 }
 
 #list .list-table td {
-    border: 1px solid rgb(187, 187, 187);
+    border: 1px solid rgba(187, 187, 187, 0.85);
     width: 12.5%;
 }
 
 #list .list-table th {
     background-color: rgb(129, 140, 175);
     width: 12.5%;
-    color: rgb(236, 240, 252);
     border: 1px solid rgb(120, 131, 168);
 }
 
 #list .list-header {
     background-color: rgb(80, 95, 141);
-    height: 10vh;
+    height: 10%;
     width: 100%;
     border-collapse: collapse;
-    color: rgb(255, 255, 255);
     border: 1px solid rgb(187, 187, 187);
     border-bottom: none;
 }
@@ -269,4 +287,29 @@ body {
 
 #list .list-header .dayNumber {
     font-size: 2vw;
+}
+
+#list .month {
+    height: 5%;
+    background-color: rgb(70, 84, 128);
+    width: 100%;
+}
+
+#listPrev, #listNext {
+    visibility: hidden;
+}
+
+/* LOADING --------------------------------------*/
+.loading {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    margin: auto;
+    width: 100%;
+    height: 100%;
+    background: url("../images/spin01.gif");
+    background-color: rgba(0, 0, 0, 0.2);
+    background-repeat: no-repeat;
+    background-size: 5vw 5vw;
+    background-position: center;
 }

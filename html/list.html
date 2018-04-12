@@ -1,18 +1,25 @@
-<div id="prevIcon" class="navIcon">
+<script src="js/list.js"></script>
+
+<div id="listPrev" class="navIcon">
         <i class="material-icons">chevron_left</i>
 </div>
 
 <div id="list">
+    <table class="month">
+        <tr>
+            <th id="dH"></th>
+        </tr>
+    </table>
     <table class="list-header">
         <tr>
             <th>Hora</th>
-            <th>Domingo<br><span class="dayNumber">5</span></th>
-            <th>Lunes<br><span class="dayNumber">6</span></th>
-            <th>Martes<br><span class="dayNumber">7</span></th>
-            <th>Miércoles<br><span class="dayNumber">8</span></th>
-            <th>Jueves<br><span class="dayNumber">9</span></th>
-            <th>Viernes<br><span class="dayNumber">10</span></th>
-            <th>Sábado<br><span class="dayNumber">11</span></th>
+            <th><span id="D0"></span><br><span id="d0" class="dayNumber"></span></th>
+            <th><span id="D1"></span><br><span id="d1" class="dayNumber"></span></th>
+            <th><span id="D2"></span><br><span id="d2" class="dayNumber"></span></th>
+            <th><span id="D3"></span><br><span id="d3" class="dayNumber"></span></th>
+            <th><span id="D4"></span><br><span id="d4" class="dayNumber"></span></th>
+            <th><span id="D5"></span><br><span id="d5" class="dayNumber"></span></th>
+            <th><span id="D6"></span><br><span id="d6" class="dayNumber"></span></th>
         </tr>
     </table>
     <table class="list-table">
@@ -159,6 +166,6 @@
     </table>
 </div>
 
-<div id="nextIcon" class="navIcon">
-        <i class="material-icons">chevron_right</i>
+<div id="listNext" class="navIcon" style="visibility:'hidden';">
+    <i class="material-icons">chevron_right</i>
 </div>

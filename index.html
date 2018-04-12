@@ -8,10 +8,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="css/main.css">
     <script src="js/jquery-3.3.1.min.js"></script>
-    <!-- PRE-LOAD -->
-    <script src="js/calendar.js"></script>
-    <!-- AFTER-LOAD -->
     <script src="js/main.js"></script>
+    <script src="js/calendar.js"></script>
     <script src="js/windows.js"></script>
     
 </head>
@@ -28,7 +26,17 @@
         </div>
         <hr>
         <div class="menu">
-            <div>
+            <div id="showList">
+                <i class="material-icons">format_list_bulleted</i>
+                <p>Vista de lista</p>
+            </div>
+            <hr>
+            <div id="showCalendar">
+                <i class="material-icons">event</i>
+                <p>Vista de calendario</p>
+            </div>
+            <hr>
+            <div id="verFecha">
                 <i class="material-icons">add</i>
                 <p>Solicitar reservación</p>
             </div>
@@ -46,17 +54,7 @@
             <div>
                 <i class="material-icons">settings</i>
                 <p>Configuración</p>
-            </div>
-            <hr>
-            <div id="showCalendar">
-                <i class="material-icons">event</i>
-                <p>Vista de calendario</p>
-            </div>
-            <hr>
-            <div id="showList">
-                <i class="material-icons">format_list_bulleted</i>
-                <p>Vista de lista</p>
-            </div>
+            </div>            
             <hr>  
         </div>
     </div>
@@ -65,6 +63,8 @@
     <div id="content-02" class="content"></div>
 
     <div id="overlay"></div>
+    
+    <div class="loading"></div>
 
 </body>
 </html>
